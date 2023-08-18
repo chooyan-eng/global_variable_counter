@@ -4,9 +4,14 @@ void main() => runApp(const MainApp());
 
 var counter = 0;
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +22,7 @@ class MainApp extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {
-            counter++;
+            setState(() => counter++);
           },
         ),
       ),
