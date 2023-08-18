@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:global_variable_counter/first_page.dart';
 
 void main() => runApp(const MainApp());
 
@@ -14,18 +15,8 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text(counter.toString()),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            setState(() => counter++);
-          },
-        ),
-      ),
+    return const MaterialApp(
+      home: FirstPage(),
     );
   }
 }
