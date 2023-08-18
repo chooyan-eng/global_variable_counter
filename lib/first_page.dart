@@ -15,7 +15,12 @@ class _FirstPageState extends State<FirstPage> {
     return Scaffold(
       appBar: AppBar(title: const Text('First Page')),
       body: Center(
-        child: Text(counter.toString()),
+        child: ValueListenableBuilder(
+          valueListenable: counter,
+          builder: (context, value, child) {
+            return Text(value.toString());
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.navigate_next_outlined),

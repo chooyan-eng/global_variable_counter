@@ -3,7 +3,13 @@ import 'package:global_variable_counter/first_page.dart';
 
 void main() => runApp(const MainApp());
 
-var counter = 0;
+final counter = Counter();
+
+class Counter extends ValueNotifier<int> {
+  Counter() : super(0);
+
+  void increment() => value++;
+}
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});

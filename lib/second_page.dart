@@ -14,12 +14,12 @@ class _SecondPageState extends State<SecondPage> {
     return Scaffold(
       appBar: AppBar(title: const Text('Second Page')),
       body: Center(
-        child: Text(counter.toString()),
+        child: Text(counter.value.toString()),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          setState(() => counter++);
+          setState(() => counter.increment());
         },
       ),
     );
