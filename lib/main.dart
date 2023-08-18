@@ -11,6 +11,18 @@ class Counter extends ValueNotifier<int> {
   void increment() => value++;
 }
 
+final multipleCounter = MultipliedCounter(counter);
+
+class MultipliedCounter extends ValueNotifier<int> {
+  MultipliedCounter(Counter counter) : super(0) {
+    counter.addListener(() {
+      multiply(counter.value);
+    });
+  }
+
+  void multiply(int base) => value = base * 2;
+}
+
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
 

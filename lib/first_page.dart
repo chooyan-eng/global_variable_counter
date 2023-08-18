@@ -16,7 +16,7 @@ class _FirstPageState extends State<FirstPage> {
       appBar: AppBar(title: const Text('First Page')),
       body: Center(
         child: ValueListenableBuilder(
-          valueListenable: counter,
+          valueListenable: multipleCounter,
           builder: (context, value, child) {
             return Text(value.toString());
           },
